@@ -37,7 +37,11 @@ Route::get('email/resend', 'Auth\VerificationController@resend')->name('verifica
 
 
 //用户路由
-Route::get('/users/{user}', 'UsersController@show')->name('users.show');
+Route::resource('users','UsersController',['only'=>['show','edit','update']]);
+
+/*Route::get('/users/{user}', 'UsersController@show')->name('users.show');
+Route::get('/users/{user}/edit', 'UsersController@edit')->name('users.edit');
+Route::patch('/users/{user}', 'UsersController@update')->name('users.update');*/
 
 
 
