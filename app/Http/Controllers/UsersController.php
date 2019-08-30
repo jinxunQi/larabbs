@@ -25,7 +25,7 @@ class UsersController extends Controller
         $data = $request->all();
 
         if ($request->avatar) {
-            $result = $uploder->save($request->avatar,'avatars',$user->id);
+            $result = $uploder->save($request->avatar,'avatars',$user->id,416);
             if ($request) {
                 $data['avatar'] = $result['path'];
             }
