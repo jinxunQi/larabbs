@@ -19,11 +19,18 @@
                     </span>
 
                     {{-- 回复删除按钮 --}}
+                    @can('destroy',$reply)
                     <span class="meta float-right ">
-                        <a title="删除回复">
-                            <i class="far fa-trash-alt"></i>
-                        </a>
+                        <form method="post" action="{{ route('replies.destroy',$reply->id) }}"
+                              onsubmit="return confirm('确定要删除此评论？');">
+                            {{ csrf_field() }}
+                            {{ method_field('DELETE') }}
+                            <button type="submit" class="btn btn-default btn-xs pull-left text-secondary" title="删除回复">
+                                <i class="far fa-trash-alt"></i>
+                            </button>
+                        </form>
                     </span>
+                    @endcan
                 </div>
 
                 {{-- 分页 --}}
