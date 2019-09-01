@@ -15,4 +15,10 @@ class Reply extends Model
     {
         return $this->belongsTo(Topic::class);
     }
+
+
+    public function scopeRecent($query)
+    {
+        return $query->orderBy('id', 'desc');
+    }
 }
