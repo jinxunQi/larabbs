@@ -4371,7 +4371,7 @@ __webpack_require__.r(__webpack_exports__);
   var ARIA_ATTRIBUTE_PATTERN = /^aria-[\w-]*$/i;
   var DefaultWhitelist = {
     // Global attributes allowed on any supplied element below.
-    '*': ['class', 'dir', 'id', 'lang', 'roles.php', ARIA_ATTRIBUTE_PATTERN],
+    '*': ['class', 'dir', 'id', 'lang', 'role', ARIA_ATTRIBUTE_PATTERN],
     a: ['target', 'href', 'title', 'rel'],
     area: [],
     b: [],
@@ -5839,14 +5839,14 @@ __webpack_require__.r(__webpack_exports__);
           $(dropdownChild).removeClass(ClassName$9.ACTIVE);
         }
 
-        if (active.getAttribute('roles.php') === 'tab') {
+        if (active.getAttribute('role') === 'tab') {
           active.setAttribute('aria-selected', false);
         }
       }
 
       $(element).addClass(ClassName$9.ACTIVE);
 
-      if (element.getAttribute('roles.php') === 'tab') {
+      if (element.getAttribute('role') === 'tab') {
         element.setAttribute('aria-selected', true);
       }
 
